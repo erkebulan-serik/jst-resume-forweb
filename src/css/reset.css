@@ -1,0 +1,48 @@
+/* Базовый reset для предсказуемой сетки */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Убираем стандартные шрифты и выравнивания */
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Делает изображения и видео адаптивными */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Наследуем шрифт у форм */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Убираем список по умолчанию */
+ul, ol {
+  list-style: none;
+}
+
+/* Ссылки без подчеркивания по умолчанию */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Улучшаем читаемость текста */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Базовый контейнер для SPA/SSR */
+#root, #__next {
+  isolation: isolate;
+}
