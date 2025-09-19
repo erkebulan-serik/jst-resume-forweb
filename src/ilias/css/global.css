@@ -29,3 +29,19 @@ h2 {
   text-align: center;
   margin-bottom: 2rem;
 }
+
+header {
+  background: #1f2937; /* тёмно-серый фон */
+  color: #fff;
+}
+
+header a {
+  color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  padding: 1.5rem 0;
+}
