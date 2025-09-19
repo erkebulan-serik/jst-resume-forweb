@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components/profile.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14.93V17a1 1 0 0 1-2 0v-.07A8.005 8.005 0 0 1 4.07 13H5a1 1 0 0 1 0-2h-.93A8.005 8.005 0 0 1 11 6.07V7a1 1 0 0 1 2 0v-.93A8.005 8.005 0 0 1 19.93 11H19a1 1 0 0 1 0 2h.93A8.005 8.005 0 0 1 13 16.93Z" />
+                </svg>
+            </div>
+
+            <a href="../index.html" class="home-icon" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor">
+                    <path d="M12 5.5l7 6V20a1 1 0 0 1-1 1h-4v-5H10v5H6a1 1 0 0 1-1-1v-8.5l7-6z" />
+                </svg>
+            </a>
+
+            <button id="themeToggle" class="theme-toggle"></button>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-photo">
+            <img src="../../public/images/img/avatar2.jpg" alt="Profile Photo">
+        </div>
+
+        <div class="profile-info">
+            <h2>Серик Еркебулан</h2>
+            <ul class="skills">
+                <li><span>JavaScript</span>
+                    <div class="bar js"></div>
+                </li>
+                <li><span>HTML</span>
+                    <div class="bar html"></div>
+                </li>
+                <li><span>CSS</span>
+                    <div class="bar css"></div>
+                </li>
+            </ul>
+
+            <h2>О себе</h2>
+            <p>
+                Я фронтенд-разработчик, увлечённый созданием красивых и удобных интерфейсов.
+            </p>
+
+            <h2>Социальные сети</h2>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="28" height="28"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6a3.1 3.1 0 0 0-1.3-1.7c-1-.6.1-.6.1-.6a2.5 2.5 0 0 1 1.9 1.3 2.6 2.6 0 0 0 3.5 1 2.6 2.6 0 0 1 .8-1.6c-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.3-3.3 4.4 4.4 0 0 1 .1-3.2s1-.3 3.4 1.3a11.7 11.7 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3a4.4 4.4 0 0 1 .1 3.2 4.7 4.7 0 0 1 1.3 3.3c0 4.8-2.8 5.7-5.5 6a2.9 2.9 0 0 1 .8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="28" height="28"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.7-2.2 3.6-2.2 3.8 0 4.5 2.5 4.5 5.8V24h-4v-7.9c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.3V24h-4V8z" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+
+            <h2 class="skills">умение</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="48" height="48"
+                            viewBox="0 0 24 24">
+                            <path d="M12 2L2 7h20L12 2zm0 2.2L18.6 7H5.4L12 4.2zM2 9v11h20V9H2zm2 2h16v7H4v-7z" />
+                        </svg>
+                        <h3>круто все оформлять</h3>
+                        <p>сделать из простого одно стр круто выглядящий сайт</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="48" height="48"
+                            viewBox="0 0 24 24">
+                            <path d="M4 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4zm0 4h10v2H4zm0 4h16v2H4z" />
+                        </svg>
+                        <h3>создание хорошей документаций</h3>
+                        <p>создание хорошей документаций для разных сайтов для дальнейшей поддержки</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+  <div class="container">
+    <div class="footer-section">
+      <h3>Контакты</h3>
+      <p>Email: support@cozysite.com</p>
+      <p>Телефон: +7 (777) 123-45-67</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Соцсети</h3>
+  <div class="social-links footer-social">
+    <a href="#" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6a3.1 3.1 0 0 0-1.3-1.7c-1-.6.1-.6.1-.6a2.5 2.5 0 0 1 1.9 1.3 2.6 2.6 0 0 0 3.5 1 2.6 2.6 0 0 1 .8-1.6c-2.7-.3-5.5-1.3-5.5-6a4.7 4.7 0 0 1 1.3-3.3 4.4 4.4 0 0 1 .1-3.2s1-.3 3.4 1.3a11.7 11.7 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3a4.4 4.4 0 0 1 .1 3.2 4.7 4.7 0 0 1 1.3 3.3c0 4.8-2.8 5.7-5.5 6a2.9 2.9 0 0 1 .8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+      </svg>
+    </a>
+    <a href="#" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.7-2.2 3.6-2.2 3.8 0 4.5 2.5 4.5 5.8V24h-4v-7.9c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.3V24h-4V8z"/>
+      </svg>
+    </a>
+  </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 erke.comp — все права защищены правообладателем erkebulan corp</p>
+        </div>
+  </div>
+</footer>
+
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

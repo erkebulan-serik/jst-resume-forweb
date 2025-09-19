@@ -1,0 +1,78 @@
+.profile-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.profile-photo {
+  flex: 1;
+  max-width: 250px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.profile-photo img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.profile-info {
+  flex: 2;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills span {
+  min-width: 100px;
+  font-weight: 600;
+}
+
+.bar {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--color-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+.bar.js::after {
+  width: 85%;
+  background: #facc15;
+}
+
+.bar.html::after {
+  width: 90%;
+  background: #ef4444;
+}
+
+.bar.css::after {
+  width: 80%;
+  background: #3b82f6;
+}

@@ -1,0 +1,77 @@
+:root {
+  /* Цветовая палитра */
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e40af;
+
+  --color-secondary: #6b7280;
+  --color-accent: #f97316;
+  --color-accent-ico:#f77777;
+
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+  --color-warning: #facc15;
+  --color-info: #0ea5e9;
+
+  --color-bg: #ffffff;
+  --color-bg-alt: #f9fafb;
+  --color-surface: #f3f4f6;
+  --color-text: #111827;
+  --color-text-light: #6b7280;
+
+  /* Шрифты */
+  --font-main: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Poppins", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* Типографика */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+
+  /* Отступы */
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-Megalg: 4rem;
+  --for-footerMLG-lg: 10rem;
+
+  /* Переходы */
+  --transition-base: 0.3s ease-in-out;
+
+  /* Тени */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Радиусы */
+  --radius-md: 8px;
+
+  /* Максимальная ширина */
+  --container-width: 1200px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg: #111827;
+  --color-bg-alt: #1f2937;
+  --color-surface: #374151;
+  --color-text: #f9fafb;
+  --color-text-light: #d1d5db;
+  --color-heading: #ffffff;
+}
+
+/* Alt Theme (его цвета и размеры) */
+[data-theme="alt"] {
+  --alt-bg: #ffffff;
+  --alt-bg-alt: #1f2937;
+  /* фон header */
+  --alt-surface: #e5e7eb;
+  /* бордер секций */
+  --alt-text: #111827;
+  --alt-text-light: #ffffff;
+  --alt-accent: #f97316;
+
+  /* 📏 Типографика (его размеры) */
+  --alt-font-size-xl: 2rem;
+
+  /* Контейнер */
+  --alt-container-width: 1200px;
+}

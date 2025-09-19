@@ -1,34 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Резюме фронтенд-разработчика. Проекты, навыки, опыт.">
-  <title>Резюме — Имя Фамилия</title>
 
-  <!-- Стили -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/layout.css">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>резюме</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+
 </head>
-<body>
-  <header>
-    <!-- Навигация -->
+
+<body data-theme="light">
+
+    <header class="site-header">
+        
+    <div class="header-inner">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             width="32" height="32" 
+             fill="currentColor">
+          <path d="M12 2a1 1 0 0 1 .92.62l1.26 3.05 3.3.27a1 1 0 0 1 .57 1.77l-2.52 2.12.8 3.22a1 1 0 0 1-1.49 1.1L12 12.9l-2.84 1.45a1 1 0 0 1-1.49-1.1l.8-3.22-2.52-2.12a1 1 0 0 1 .57-1.77l3.3-.27L11.08 2.6A1 1 0 0 1 12 2z"/>
+        </svg>
+        <span></span>
+      </div>
+
+      <a href="index.html" class="home-icon" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             width="36" height="36" 
+             fill="currentColor">
+          <path d="M12 5.5l7 6V20a1 1 0 0 1-1 1h-4v-5H10v5H6a1 1 0 0 1-1-1v-8.5l7-6z"/>
+        </svg>
+      </a>
+
+      <button id="themeToggle" class="theme-toggle"></button>
+    </div>
   </header>
 
-  <main>
-    <!-- Hero-секция -->
-    <!-- Skills -->
-    <!-- Projects -->
-    <!-- Contact -->
-  </main>
 
-  <footer>
-    <!-- Подвал -->
-  </footer>
+    <main class="site-main">
+        <section class="hero container">
+            <h2 class="hero-title">сайт с резюме</h2>
+            <p class="hero-sub">три стр 5 группы    </p>
+        </section>
 
-  <!-- Скрипты -->
-  <script src="js/app.js" defer></script>
+        <section class="cards container" aria-label="Основные разделы">
+            <a class="card" href="pages/erkebulan.html" data-card-index="1" aria-label="Перейти в раздел 1">
+                <div class="card-media">
+                    <img src="../public/images/img/avatar2.jpg" alt="Иллюстрация раздела 1">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">erkebulan</h3>
+                    <p class="card-desc">начинающий фронт эндер</p>
+                </div>
+            </a>
+
+            <a class="card" href="pages/ilias.html" data-card-index="2" aria-label="Перейти в раздел 2">
+                <div class="card-media">
+                    <img src="../public/images/img/avatar.jpg" alt="Иллюстрация раздела 2">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">ilias</h3>
+                    <p class="card-desc">продвинутый пользователь хаки</p>
+                </div>
+            </a>
+
+            <a class="card" href="#" data-card-index="3" aria-label="Перейти в раздел 3">
+                <div class="card-media">
+                    <img src="https://source.unsplash.com/collection/190727/800x600?sig=3" alt="Иллюстрация раздела 3">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">dinmuhamed</h3>
+                    <p class="card-desc">тим лид команды, а так же староста
+                    </p>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 erke.comp — все права защищены правообладателем erkebulan corp</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js" defer></script>
 </body>
+
 </html>
