@@ -114,13 +114,44 @@
         </form>
       </section>
 
+      <section id="tasks" class="container">
+        <h2>Задания</h2>
+
+         <!-- 1-тапсырма -->
+        <div id="task1">
+          <h3>1-тапсырма</h3>
+          <button id="change-btn">Изменить</button>
+          <div id="old-element">Ескі элемент</div>
+        </div>
+
+        <!-- 2-тапсырма -->
+        <div id="task2">
+          <h3>2-тапсырма</h3>
+          <div id="toggle-class">Нажми, чтобы переключить класс</div>
+          <p id="class-list"></p>
+        </div>
+
+        <!-- 3-тапсырма (Tabs) -->
+        <div id="task3">
+          <h3>3-тапсырма (Tabs)</h3>
+          <div class="tabs">
+            <button class="tab active" data-tab="1">Вкладка 1</button>
+            <button class="tab" data-tab="2">Вкладка 2</button>
+            <button class="tab" data-tab="3">Вкладка 3</button>
+          </div>
+          <div class="tab-content" id="tab-1">Содержимое вкладки 1</div>
+          <div class="tab-content hidden" id="tab-2">Содержимое вкладки 2</div>
+          <div class="tab-content hidden" id="tab-3">Содержимое вкладки 3</div>
+        </div>
+      </section>
+
     </main>
 
     <footer>
       <p>© 2025 Ілияс Галиханов. Все права защищены.</p>
     </footer>
 
-    <!-- <script src="../js/app.js" defer></script> -->
+    <script src="../js/app.js" defer></script>
     <script src="../js/utils.js"> </script>
   </body>
 </html>
