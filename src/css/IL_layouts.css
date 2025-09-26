@@ -150,3 +150,41 @@ footer {
     color: var(--color-muted);
     font-size: 0.9rem;
 }
+
+#tasks {
+  margin-top: 3rem;
+}
+
+#toggle-class {
+  padding: 1rem;
+  background: #eee;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+#toggle-class.active {
+  background: #4caf50;
+  color: white;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #2563eb;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.hidden {
+  display: none;
+}
