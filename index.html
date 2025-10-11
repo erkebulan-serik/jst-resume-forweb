@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Резюме</title>
+
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/variables.css">
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/layout.css">
+
+
+</head>
+
+<body data-theme="light">
+
+    <header class="site-header">
+        
+    <div class="header-inner">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             width="32" height="32" 
+             fill="currentColor">
+          <path d="M12 2a1 1 0 0 1 .92.62l1.26 3.05 3.3.27a1 1 0 0 1 .57 1.77l-2.52 2.12.8 3.22a1 1 0 0 1-1.49 1.1L12 12.9l-2.84 1.45a1 1 0 0 1-1.49-1.1l.8-3.22-2.52-2.12a1 1 0 0 1 .57-1.77l3.3-.27L11.08 2.6A1 1 0 0 1 12 2z"/>
+        </svg>
+        <span></span>
+      </div>
+
+      <a href="index.html" class="home-icon" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             viewBox="0 0 24 24" 
+             width="36" height="36" 
+             fill="currentColor">
+          <path d="M12 5.5l7 6V20a1 1 0 0 1-1 1h-4v-5H10v5H6a1 1 0 0 1-1-1v-8.5l7-6z"/>
+        </svg>
+      </a>
+
+      <button id="themeToggle" class="theme-toggle"></button>
+    </div>
+  </header>
+
+
+    <main class="site-main">
+        <section class="hero container">
+            <h2 class="hero-title">Сайт с резюме</h2>
+            <p class="hero-sub">Три стр 5 группы    </p>
+        </section>
+
+        <section class="cards container" aria-label="Основные разделы">
+            <a class="card" href="pages/erkebulan.html" data-card-index="1" aria-label="Перейти в раздел 1">
+                <div class="card-media">
+                    <img src="public/images/img/avatar2.jpg" alt="Иллюстрация раздела 1">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Еркебұлан</h3>
+                    <p class="card-desc">Начинающий фронт эндер</p>
+                </div>
+            </a>
+
+            <a class="card" href="pages/ilias.html" data-card-index="2" aria-label="Перейти в раздел 2">
+                <div class="card-media">
+                    <img src="public/images/img/avatar.jpg" alt="Иллюстрация раздела 2">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Ілияс</h3>
+                    <p class="card-desc">Продвинутый пользователь хаки</p>
+                </div>
+            </a>
+
+            <a class="card" href="pages/muhammed.html" data-card-index="3" aria-label="Перейти в раздел 3">
+                <div class="card-media">
+                    <img src="https://source.unsplash.com/collection/190727/800x600?sig=3" alt="Иллюстрация раздела 3">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Мұхаммед</h3>
+                    <p class="card-desc">Тим лид команды, а так же староста
+                    </p>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 erke.comp — все права защищены правообладателем erkebulan corp</p>
+        </div>
+    </footer>
+
+    <script src="src/js/app.js" defer></script>
+</body>
+
+</html> 
