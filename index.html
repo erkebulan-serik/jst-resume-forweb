@@ -1,95 +1,282 @@
 <!doctype html>
-<html lang="ru">
-
+<html lang="kk">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Резюме</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Интерактивті кесте — Түстерді санау</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:18px}
+    label{display:inline-block;margin:6px 8px 0 0}
+    input[type=number]{width:80px}
+    #grid{display:inline-block;margin-top:12px;border-collapse:collapse}
+    table{border-collapse:collapse}
+    td{width:40px;height:40px;border:1px solid #999;cursor:pointer;text-align:center;transition:0.15s}
+    .controls{margin-bottom:12px}
+    .stats{margin-top:12px;white-space:pre-line}
+    button{margin-left:6px}
+    #tasks {margin-top: 3rem;}
+    #toggle-class {
+      padding: 1rem;
+      background: #eee;
+      cursor: pointer;
+      margin: 1rem 0;
+    }
 
-    <link rel="stylesheet" href="src/css/reset.css">
-    <link rel="stylesheet" href="src/css/variables.css">
-    <link rel="stylesheet" href="src/css/global.css">
-    <link rel="stylesheet" href="src/css/layout.css">
+    #toggle-class.active {
+      background: #4caf50;
+      color: white;
+    }
 
+    .tab {
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
 
+    .tab.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .tab-content {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
-
-<body data-theme="light">
-
-    <header class="site-header">
-        
-    <div class="header-inner">
-      <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             viewBox="0 0 24 24" 
-             width="32" height="32" 
-             fill="currentColor">
-          <path d="M12 2a1 1 0 0 1 .92.62l1.26 3.05 3.3.27a1 1 0 0 1 .57 1.77l-2.52 2.12.8 3.22a1 1 0 0 1-1.49 1.1L12 12.9l-2.84 1.45a1 1 0 0 1-1.49-1.1l.8-3.22-2.52-2.12a1 1 0 0 1 .57-1.77l3.3-.27L11.08 2.6A1 1 0 0 1 12 2z"/>
-        </svg>
-        <span></span>
-      </div>
-
-      <a href="index.html" class="home-icon" aria-label="Home">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             viewBox="0 0 24 24" 
-             width="36" height="36" 
-             fill="currentColor">
-          <path d="M12 5.5l7 6V20a1 1 0 0 1-1 1h-4v-5H10v5H6a1 1 0 0 1-1-1v-8.5l7-6z"/>
-        </svg>
-      </a>
-
-      <button id="themeToggle" class="theme-toggle"></button>
-    </div>
-  </header>
-
-
-    <main class="site-main">
-        <section class="hero container">
-            <h2 class="hero-title">Сайт с резюме</h2>
-            <p class="hero-sub">Три стр 5 группы    </p>
-        </section>
-
-        <section class="cards container" aria-label="Основные разделы">
-            <a class="card" href="pages/erkebulan.html" data-card-index="1" aria-label="Перейти в раздел 1">
-                <div class="card-media">
-                    <img src="public/images/img/avatar2.jpg" alt="Иллюстрация раздела 1">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Еркебұлан</h3>
-                    <p class="card-desc">Начинающий фронт эндер</p>
-                </div>
-            </a>
-
-            <a class="card" href="pages/ilias.html" data-card-index="2" aria-label="Перейти в раздел 2">
-                <div class="card-media">
-                    <img src="public/images/img/avatar.jpg" alt="Иллюстрация раздела 2">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Ілияс</h3>
-                    <p class="card-desc">Продвинутый пользователь хаки</p>
-                </div>
-            </a>
-
-            <a class="card" href="pages/muhammed.html" data-card-index="3" aria-label="Перейти в раздел 3">
-                <div class="card-media">
-                    <img src="https://source.unsplash.com/collection/190727/800x600?sig=3" alt="Иллюстрация раздела 3">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Мұхаммед</h3>
-                    <p class="card-desc">Тим лид команды, а так же староста
-                    </p>
-                </div>
-            </a>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2025 erke.comp — все права защищены правообладателем erkebulan corp</p>
+<body>
+  <section id="tasks" class="container">
+        <h2>Задания</h2>
+        <div id="task3">
+          <h3>3-тапсырма (Tabs)</h3>
+          <div class="tabs">
+            <button class="tab active" data-tab="1">Вкладка 1</button>
+            <button class="tab" data-tab="2">Вкладка 2</button>
+            <button class="tab" data-tab="3">Вкладка 3</button>
+            <button class="tab" data-tab="4">Вкладка 4</button>
+            <button class="tab" data-tab="4">Вкладка 5</button>
+          </div>
+          <div class="tab-content" id="tab-1"><div id="task1">
+          <h3>1-тапсырма</h3>
+          <button id="change-btn">Изменить</button>
+          <button id="add-btn">Добавить</button>
+          <button id="delete-btn">Удалить</button>
+          <div id="old-element">Ескі элемент</div>
+          <div id="matin">Ескі мәтін</div>
+        </div></div>
+          <div class="tab-content hidden" id="tab-2"><div id="task2">
+          <h3>2-тапсырма</h3>
+          <div id="toggle-class" class="title">Нажми, чтобы переключить класс</div>
+          <p id="class-list"></p>
+        </div></div>
+          <div class="tab-content hidden" id="tab-3">Содержимое вкладки 3</div>
         </div>
-    </footer>
+        <div class="tab-content hidden" id="tab-4">
+          <h2>Интерактивті кесте</h2>
+          <div class="controls">
+            <label>Жолдар: <input id="rows" type="number" min="1" value="5"></label>
+            <label>Бағандар: <input id="cols" type="number" min="1" value="6"></label>
+            <button id="createBtn">Кесте құру</button>  
+            <button id="deletetable">Кесте жою</button>  
+            <p></p>
+            <label>Ұяшық түсі: <input id="paintColor" type="color" value="#ffcc00"></label>
+            
+            <button id="fillAll">Барлығын толтыру</button>
+            <button id="clearAll">Барлығын тазалау</button>
+          </div>
 
-    <script src="src/js/app.js" defer></script>
+          <div id="gridWrap"></div>
+          <div class="stats" id="stats"></div></div>
+        </div>
+      </section>
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const oldElement = document.getElementById("old-element");
+      const oldMatin = document.getElementById("matin");
+      const btn = document.getElementById("change-btn");
+      const btnn = document.getElementById("add-btn");
+
+      btn.addEventListener("click", () => {
+        oldMatin.textContent = "Сәлем, әлем!";
+      });
+    
+      btnn.addEventListener("click", () => {
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "Мен жаңа элементпін!";
+        newDiv.className = "new-div";
+        document.body.appendChild(newDiv);
+      });  
+    
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = "Бұл ауыспалы абзац";
+      document.getElementById("task1").appendChild(paragraph);
+      paragraph.addEventListener("click", () => {
+        if (paragraph.style.color === "red") {
+          paragraph.style.color = "";
+          paragraph.style.fontSize = "";
+        } else {
+          paragraph.style.color = "red";
+          paragraph.style.fontSize = "20px";
+        }
+
+      });
+
+      const deleteBtn = document.getElementById("delete-btn");
+      deleteBtn.addEventListener("click", () => {
+        oldElement.remove();
+      });
+
+      const toggleDiv = document.getElementById('toggle-class');
+      const classListP = document.getElementById('class-list');
+      if (toggleDiv) {
+        toggleDiv.addEventListener('click', () => {
+          toggleDiv.classList.toggle('active');
+          const classes = toggleDiv.className || toggleDiv.classList.value;
+          console.log('Классы элемента:', classes);
+        if (classListP) classListP.textContent = 'Классы: ' + classes;
+      });
+      }
+
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.classList.add("hidden"));
+
+          tab.classList.add("active");
+          const target = document.getElementById("tab-" + tab.dataset.tab);
+          target.classList.remove("hidden");
+        });
+      });
+    });
+
+    const createBtn = document.getElementById('createBtn');
+    const rowsInput = document.getElementById('rows');
+    const colsInput = document.getElementById('cols');
+    const gridWrap = document.getElementById('gridWrap');
+    const paintColor = document.getElementById('paintColor');
+    const stats = document.getElementById('stats');
+    const fillAllBtn = document.getElementById('fillAll');
+    const clearAllBtn = document.getElementById('clearAll');
+    const deletetable = document.getElementById('deletetable');
+
+
+    function createTable(r, c){
+      gridWrap.innerHTML = '';
+      const table = document.createElement('table');
+      for(let i=0;i<r;i++){
+        const tr = document.createElement('tr');
+        for(let j=0;j<c;j++){
+          const td = document.createElement('td');
+          td.dataset.color = '';
+          td.title = `Р:${i+1} C:${j+1}`;
+          td.addEventListener('click', () => {
+            toggleCell(td, paintColor.value);
+            updateStats(); 
+          });
+          tr.appendChild(td);
+        }
+        table.appendChild(tr);
+      }
+      gridWrap.appendChild(table);
+      updateStats();
+    }
+    deletetable.addEventListener('click', () => {
+      gridWrap.innerHTML = '';
+      stats.innerText = 'Кесте жойылды.';
+    });
+
+    function toggleCell(cell, color){
+      const cur = cell.dataset.color || '';
+      const newColor = normalizeHex(color);
+      if(normalizeHex(cur) === newColor){
+        cell.style.background = ''; 
+        cell.dataset.color = '';
+      } else {
+        cell.style.background = newColor;
+        cell.dataset.color = newColor;
+      }
+    }
+
+    function normalizeHex(h){
+      if(!h) return '';
+      return h.toLowerCase();
+    }
+
+    function countAllColors(){
+      const table = gridWrap.querySelector('table');
+      if(!table) return {total:0, counts:{}};
+
+      const cells = Array.from(table.querySelectorAll('td'));
+      const total = cells.length;
+      const counts = {};
+
+      for(const td of cells){
+        const clr = normalizeHex(td.dataset.color);
+        const key = (!clr || clr === '#ffffff') ? 'Боялмаған' : clr;
+        counts[key] = (counts[key] || 0) + 1;
+      }
+
+      return {total, counts};
+    }
+
+    function updateStats(){
+      const res = countAllColors();
+      const {total, counts} = res;
+
+      if(total === 0){
+        stats.innerText = 'Кесте жоқ.';
+        return;
+      }
+
+      let text = `Барлығы: ${total}\n`;
+      for(const [color, count] of Object.entries(counts)){
+        if(color === 'Боялмаған'){
+          text += `${color}: ${count}\n`;
+        } else {
+          text += `Түс ${color}: ${count}\n`;
+        }
+      }
+
+      stats.innerText = text.trim();
+    }
+
+    createBtn.addEventListener('click', ()=>{
+      const r = parseInt(rowsInput.value,10) || 0;
+      const c = parseInt(colsInput.value,10) || 0;
+      gridWrap.innerHTML = '';
+      stats.innerText = 'Кесте жойылды.';
+      if(r<=0 || c<=0){ stats.innerText = 'Жарамсыз өлшем'; return; }
+      createTable(r,c);
+    });
+
+    fillAllBtn.addEventListener('click', ()=>{
+      const table = gridWrap.querySelector('table');
+      if(!table){ stats.innerText = 'Алдымен кестені құрыңыз'; return; }
+      const hex = normalizeHex(paintColor.value);
+      table.querySelectorAll('td').forEach(td=>{ td.style.background = hex; td.dataset.color = hex; });
+      updateStats();
+    });
+
+    clearAllBtn.addEventListener('click', ()=>{
+      const table = gridWrap.querySelector('table');
+      if(!table){ stats.innerText = 'Алдымен кестені құрыңыз'; return; }
+      table.querySelectorAll('td').forEach(td=>{ td.style.background = ''; td.dataset.color = ''; });
+      updateStats();
+    });
+
+    createTable(parseInt(rowsInput.value,10), parseInt(colsInput.value,10));
+  </script>
 </body>
-
-</html> 
+</html>
